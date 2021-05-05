@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+<script type="text/javascript">
+	const validate = (event)=>{
+		event.preventDefault();
+		const userName = document.register.userName.value;
+		const adhar = document.register.adhar.value;
+		const pan = document.register.pan.value;
+		const bank = document.register.bank.value;
+		const userEmail = document.register.userEmail.value;
+		const password = document.register.password.value;
+		const confirmPassword = document.register.confimPassword.value;
+		if(!userName){
+			alert("Enter valid name!");
+			return false;
+		}
+		else if(!userEmail){
+			alert("Enter valid Email address!");
+			return false;
+		}else if(!adhar || adhar.length < 12){
+			alert("Enter valid adhar card number (It should be a 12 digit number)!");
+			return false;
+		}else if(!pan){
+			alert("Enter valid pan card number!");
+			return false;
+		}else if(!bank){
+			alert("Enter valid bank detail!");
+			return false;
+		}else if(!password || !confirmPassword){
+			alert("Enter valid password!");
+			return false;
+		}else if((password.localeCompare(confirmPassword))!==0){
+			alert("Password doesn't match!");
+			return false;
+		}
+		return true;
+		
+		}
+</script>
+
+<style>
+body{
+display:flex;
+align-items:center;
+justify-content:center;
+color:black;
+flex-direction:column;
+background-color: #333;
+	font-family:Monospace;
+}
+input:focus{
+outline :none;
+}
+
+form{
+ display: flex;
+
+ color:white;
+ font-family:Monospace;
+ justify-content:center;
+ flex-direction:column;
+}
+
+form> input{
+	margin-bottom:20px;
+	height:25px;
+	width:500px;
+	
+	
+}
+span{
+color : #ce1f6a;
+}
+ .submit{
+ 	width:30%;
+	height:40px;
+	font-family : Monospace;
+	font-size : 16px;
+	border-radius: 5px;
+	background-color:green;
+	color:white;
+ }
+ 
+
+ .submit:focus , .submit:hover {
+  background-color: #228B22;
+  color: White;
+}
+</style>
+</head>
+<body>
+       <form action= '../register' onSubmit = 'return validate()'  method = "post"name='register' >
+		<h1>New Registration <span>&#8669;</span></h1>
+		<br/>
+		Enter Your Name &#8669;
+		<input type = 'text' name='userName'/>
+		Enter Your Adharcard Number &#8669;
+		<input type = 'text' name='adhar'/>
+		Enter Your Pancard Number &#8669;
+		<input type = 'text' name='pan'/>
+		Enter Your Bank Name &#8669;
+		<input type = 'text' name='bank'/>
+		Enter Your Email &#8669;
+		<input type = 'email' name='userEmail'/>
+		Enter Your Password &#8669; 
+		<input type = 'password' name='password'/>
+		Confirm Your Password &#8669; 
+		<input type = 'password' name='confimPassword'/>
+		
+		<button class='submit' type = 'submit'>Register</button>
+
+		</form>;
+</body>
+</html>
