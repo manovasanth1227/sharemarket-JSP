@@ -16,3 +16,11 @@ Bracket Order : In this user can place 3 orders, like the buying order(Actual Or
 Technologies used:
 JAVA, MYSQL DB
 MVC pattern is used
+
+
+
+Project Name : SharemarketJSP
+server : http://localhost:8090/ShareMarketJSP/JSP/index.jsp
+url : jdbc:mysql://localhost:3306/sharemarket
+Database Name : sharemarket
+
